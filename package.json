@@ -5,15 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "cd server && npm install  && cd ../client && npm install && npm run build",
-    "start": "node server/server.js",
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iamaliahad/full-stack-ecommerce.git"
-  },
-  "dependencies": {
-    "nodemon": "^2.0.19"
   },
   "author": "",
   "license": "ISC",
