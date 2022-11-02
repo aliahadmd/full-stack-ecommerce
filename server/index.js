@@ -6,7 +6,7 @@ import authRoutes from "./routes/auth.js";
 import categoryRoutes from "./routes/category.js";
 import productRoutes from "./routes/product.js";
 import cors from "cors";
-import path from 'path';
+
 
 dotenv.config();
 
@@ -28,18 +28,7 @@ app.use("/api", authRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 
-//deploy site
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '/client/build')));
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/client/build/index.html'))
-);
 
-app.use((err, req, res, next) => {
-  res.status(500).send({ message: err.message });
-});
-
-//---------
 
 const port = process.env.PORT || 8000;
 
